@@ -1,6 +1,7 @@
 from flask import Flask, render_template, Response
 from camera import VideoCamera
 import time
+import os
 
 app = Flask(__name__)
 
@@ -49,5 +50,9 @@ def final_count():
         return render_template('count.html', count=count)
     return render_template('count.html')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000', debug=True)
+# No need for the following block when using gunicorn
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port='5000', debug=True)
+
+# Use this line to allow the application to run on Render
+app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)
