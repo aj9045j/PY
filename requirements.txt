@@ -1,4 +1,4 @@
-absl-py==2.1.0
+absl-py
 annotated-types==0.7.0
 anyio==4.3.0
 argon2-cffi==23.1.0
@@ -42,7 +42,7 @@ httpcore==1.0.5
 httpx==0.27.0
 idna==3.7
 imbalanced-learn==0.12.3
-ipykernel==6.29.4
+ipykernel
 ipython==8.23.0
 ipywidgets==8.1.2
 isoduration==20.11.0
@@ -124,7 +124,7 @@ qtconsole==5.5.1
 QtPy==2.4.1
 referencing==0.34.0
 requests==2.31.0
-rfc3339-validator==0.1.4
+rfc3339-validator
 rfc3986-validator==0.1.1
 rich==13.7.1
 rpds-py==0.18.0
@@ -140,8 +140,8 @@ stack-data==0.6.3
 starlette==0.37.2
 tensorboard==2.16.2
 tensorboard-data-server==0.7.2
-tensorflow==2.16.1
-tensorflow-intel==2.16.1
+tensorflow
+tensorflow-intel
 tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.4.0
 terminado==0.18.1
