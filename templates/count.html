@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Catch me if you can</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            background-color: #223;
+        }
+
+        .content {
+            margin: 25vh auto;
+            height: 39vh;
+            width: 43vw;
+            font-size: x-large;
+            display: flex;
+            flex-direction: column;
+
+            color: #f6ff00;
+            -webkit-text-stroke: 2px black;
+        }
+
+        .press-start-2p-regular {
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .home {
+            height: 10vh;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content press-start-2p-regular">
+        <h1 class="press-start-2p-regular">
+            Your time is Over :
+        </h1>
+        <h1 class="count">{{count}}</h1>
+        <button class="home" onclick="home()">Home</button>
+    </div>
+</body>
+    <script>
+        function home(){
+            window.location.href = "/";
+        }
+    </script>
+</html>
