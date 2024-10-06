@@ -7,25 +7,18 @@ import math
 class VideoCamera(object):
     def __init__(self):
         self.video = cv.VideoCapture(0)
-        
-        # Check if the camera is successfully opened
-        if not self.video.isOpened():
-            self.video = None
-            print("Error: Camera not available.")
-        else:
-            self.video.set(3, 1000)  # Width
-            self.video.set(4, 1100)  # Height
-            self.ctime = 0
-            self.ptime = 0
-            self.game_time = time.time()
-            self.start_time = time.time()
-            self.position = self.get_random_position()
-            self.count = 0
-            self.detector = pt.poseDetector()
+        self.video.set(3, 1000)
+        self.video.set(4, 1100)
+        self.ctime = 0
+        self.ptime = 0
+        self.game_time = time.time()
+        self.start_time = time.time()
+        self.position = self.get_random_position()
+        self.count = 0
+        self.detector = pt.poseDetector()
 
     def __del__(self):
-        if self.video:
-            self.video.release()
+        self.video.release()
 
     def get_random_position(self):
         self.x = random.randint(10, 600)
@@ -33,13 +26,8 @@ class VideoCamera(object):
         return self.x, self.y
 
     def get_frame(self):
-        # If the camera isn't initialized, return None
-        if not self.video:
-            return None
-
         ret, frame = self.video.read()
         if not ret:
-            print("Error: Unable to capture video frame.")
             return None
 
         frame = cv.flip(frame, 1)
@@ -69,7 +57,7 @@ class VideoCamera(object):
         cv.circle(frame, self.position, 20, (255, 255, 255), -1)
         cv.putText(frame, f'Count: {str(int(self.count))}', (700, 70), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (255, 0, 255), 3)
         cv.putText(frame, f'FPS: {str(int(fps))}', (30, 70), cv.FONT_HERSHEY_SCRIPT_SIMPLEX, 2, (255, 0, 255), 3)
-
+      
         ret, jpeg = cv.imencode('.jpg', frame)
         if not ret:
             return None
